@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Go vet on save",
+      "description": "Run go vet over the workspace after any .go file is saved so engine bugs surface before they run.",
+      "trigger": "PostFileSave",
+      "matcher": "\\.go$",
+      "action": { "type": "command", "command": "go vet ./..." },
+      "timeout": 30,
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Frontend typecheck on agent stop",
+      "description": "When an agent session ends, run the TypeScript compiler as a lightweight CI gate so UI type errors never sit unnoticed.",
+      "trigger": "Stop",
+      "action": { "type": "command", "command": "npm run typecheck" },
+      "timeout": 60,
+      "enabled": true
+    }
+  ]
+}

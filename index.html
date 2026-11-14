@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLamAmp</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <!-- ======== main player panel ======== -->
+    <section class="player">
+      <!-- title bar: gold on pinstripe, scrolls long names -->
+      <div class="titlebar">
+        <div class="title-track" id="title">LLamAmp</div>
+      </div>
+
+      <div class="player-body">
+        <!-- left: LED clock -->
+        <div class="timewrap">
+          <div class="time" id="time">-&?:--</div>
+          <div class="time-hint">click to toggle</div>
+        </div>
+
+        <!-- middle: spectrum visualizer -->
+        <canvas id="spectrum" width="264" height="76"></canvas>
+
+        <!-- right: rate chips -->
+        <div class="chips">
+          <div class="chip" id="kbps">&nbsp;</div>
+          <div class="chip" id="khz">&nbsp;</div>
+          <div class="chip mono" id="mode">stereo</div>
+        </div>
+      </div>
+
+      <!-- seek bar -->
+      <div class="seek" id="seek">
+        <div class="seek-fill" id="seekFill"></div>
+        <div class="seek-knob" id="seekKnob"></div>
+      </div>
+
+      <div class="controls">
+        <div class="transport">
+          <button id="prev" title="Previous">&lt;&lt;</button>
+          <button id="play" title="Play">&gt;</button>
+          <button id="pause" title="Pause">||</button>
+          <button id="stop" title="Stop">&#9632;</button>
+          <button id="next" title="Next">&gt;&gt;</button>
+        </div>
+        <div class="rightcontrols">
+          <div class="slider" id="volume">
+            <div class="slider-fill" id="volumeFill"></div>
+            <div class="slider-knob" id="volumeKnob"></div>
+          </div>
+          <span class="vol-label" id="volLabel">75</span>
+          <button id="eject" title="Open folder">EJECT</button>
+        </div>
+      </div>
+
+      <div class="statusline">
+        <span class="mono" id="statusState">STOPPED</span>
+        <span class="spacer"></span>
+        <span id="statusTrack" class="muted">no folder loaded</span>
+      </div>
+    </section>
+
+    <!-- ======== playlist panel ======== -->
+    <section class="playlist">
+      <div class="pl-title">PLAYLIST <span id="plCount" class="muted"></span></div>
+      <div class="pl-list" id="plList"></div>
+    </section>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
